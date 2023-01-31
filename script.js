@@ -207,7 +207,7 @@ window.onload = function () {
     let ip1;
     let ip2;
     let ip3;
-    let ip4,ip5,ip6,correct=0;
+    let ip4,ip5,ip6,correct=0,ans="Correct =";
     // document.getElementById("guess").innerHTML = remainingGuesses;
     const inputFields = [
         ip1=document.getElementById("ip1").value,
@@ -216,27 +216,32 @@ window.onload = function () {
         ip4=document.getElementById("ip4").value,
         ip5=document.getElementById("ip5").value
       ];
-
+      
       for (let i = 1; i <= 6; i++) {
         const textbox = document.getElementById(`ip${i}`);
         textbox.addEventListener("input", function() {
           if (/[a-zA-Z]/.test(textbox.value)) {
             runFunction(textbox.value);
+
+            console.log("textbox is "+textbox.value);
           }
         });
       }
 
       function runFunction(textboxId) {
 
+
         
         console.log(`Text box with id ${textboxId} is filled with an alphabet`);
         // if (randomWord.word == textboxId) {
         //   alert("You win");
         // }
-          console.log(randomWord.word[0]);
+          console.log("randomword is "+ randomWord.word[z]);
           
           if(randomWord.word[z] == textboxId){
-            document.getElementById("result").innerHTML = "Correct";
+            ans = ans.concat(textboxId+",");
+            document.getElementById("result").innerHTML = ans;
+            z++;
           console.log("Correct");
           correct++;
             console.log("randomword"+randomWord.word[z]);
@@ -253,7 +258,7 @@ window.onload = function () {
                 location.reload();
               }
           }
-          z++;
+          
           console.log("z="+z);
 
           if(correct == randomWord.word.length )
