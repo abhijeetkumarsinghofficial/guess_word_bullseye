@@ -199,7 +199,7 @@ console.log(randomWord.word);
 console.log(randomWord.hint);
 
 window.onload = function () {
-    // document.getElementById("hint").innerHTML = randomWord.hint;
+    document.getElementById("hint").innerHTML = randomWord.hint;
     
     // let remainingChances = totalChances;
     let numOfGuesses = 8;
