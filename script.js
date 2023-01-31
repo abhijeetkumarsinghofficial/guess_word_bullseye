@@ -197,8 +197,14 @@ let randomIndex = Math.floor(Math.random() * wordList.length);
 let randomWord = wordList[randomIndex];
 console.log(randomWord.word); 
 console.log(randomWord.hint);
+function resetscreen(){
+    
 
+    location.reload();
+
+}
 window.onload = function () {
+
     document.getElementById("hint").innerHTML = randomWord.hint;
     
     // let remainingChances = totalChances;
@@ -223,7 +229,7 @@ window.onload = function () {
           if (/[a-zA-Z]/.test(textbox.value)) {
             runFunction(textbox.value);
 
-            console.log("textbox is "+textbox.value);
+            console.log("textbox that send data "+textbox.value);
           }
         });
       }
@@ -236,20 +242,20 @@ window.onload = function () {
         // if (randomWord.word == textboxId) {
         //   alert("You win");
         // }
-          console.log("randomword is "+ randomWord.word[z]);
+          console.log("REAL == "+ randomWord.word[z] + " textboxId == "+ textboxId );
           
           if(randomWord.word[z] == textboxId){
             ans = ans.concat(textboxId+",");
             document.getElementById("result").innerHTML = ans;
             z++;
-          console.log("Correct");
+          console.log("Correct fn");
           correct++;
-            console.log("randomword"+randomWord.word[z]);
+
             
           }
           else{
             document.getElementById("result").innerHTML = "Wrong";
-            console.log("Wrong");
+            console.log("Wrong fn");
             console.log(numOfGuesses);
             numOfGuesses--;
             document.getElementById("guess").innerHTML = numOfGuesses;
@@ -266,8 +272,8 @@ window.onload = function () {
                 alert("You win");
                 location.reload();
             }
+            console.log("====================");
       }
-
      
 
     
